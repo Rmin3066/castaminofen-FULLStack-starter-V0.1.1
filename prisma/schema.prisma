@@ -1,0 +1,160 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String              @id @default(cuid())
+  email           String              @unique
+  name            String?
+  username        String?             @unique
+  passwordHash    String?
+  avatarUrl       String?
+  bio             String?
+  emailVerifiedAt DateTime?
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  profiles        Profile[]
+  channels        Channel[]
+  playlists       Playlist[]
+  bookmarks       Bookmark[]
+  listeningHistory ListeningHistory[]
+
+  @@map("users")
+}
+
+model Profile {
+  id           String   @id @default(cuid())
+  userId       String
+  displayName  String?
+  locale       String   @default("en")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("profiles")
+}
+
+model Channel {
+  id          String    @id @default(cuid())
+  ownerId     String
+  name        String
+  slug        String    @unique
+  description String?
+  avatarUrl   String?
+  coverUrl    String?
+  isVerified  Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  owner    User      @relation(fields: [ownerId], references: [id])
+  podcasts Podcast[]
+
+  @@map("channels")
+}
+
+model Podcast {
+  id          String    @id @default(cuid())
+  channelId   String
+  title       String
+  slug        String    @unique
+  description String?
+  categoryId  String?
+  coverUrl    String?
+  status      String    @default("draft")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  channel   Channel    @relation(fields: [channelId], references: [id])
+  category  Category?  @relation(fields: [categoryId], references: [id])
+  episodes  Episode[]
+  tags      Tag[]
+
+  @@map("podcasts")
+}
+
+model Episode {
+  id          String   @id @default(cuid())
+  podcastId   String
+  title       String
+  slug        String   @unique
+  audioUrl    String
+  coverUrl    String?
+  description String?
+  durationSec Int?
+  chapterJson String?
+  status      String   @default("draft")
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  podcast Podcast @relation(fields: [podcastId], references: [id])
+  tags Tag[]
+  bookmarks Bookmark[]
+  history ListeningHistory[]
+
+  @@map("episodes")
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  slug     String    @unique
+  podcasts Podcast[]
+
+  @@map("categories")
+}
+
+model Tag {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  slug     String    @unique
+  podcasts Podcast[]
+  episodes Episode[]
+
+  @@map("tags")
+}
+
+model Playlist {
+  id        String   @id @default(cuid())
+  userId    String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("playlists")
+}
+
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  episodeId String
+  createdAt DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id])
+  episode  Episode  @relation(fields: [episodeId], references: [id])
+
+  @@map("bookmarks")
+}
+
+model ListeningHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  episodeId String
+  position  Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id])
+  episode  Episode  @relation(fields: [episodeId], references: [id])
+
+  @@map("listening_history")
+}
