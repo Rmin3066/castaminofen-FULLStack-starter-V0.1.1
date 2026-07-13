@@ -1,96 +1,52 @@
-'use client';
+import Link from 'next/link';
+import { Suspense } from 'react';
 
-import { FormEvent, useState } from 'react';
+import { AppShell } from '../../components/app-shell';
+import { PageHeader } from '@castaminofen/ui';
 
-import { registerUser } from '../auth/client';
+function RegisterForm() {
+  return (
+    <div className="mx-auto flex max-w-2xl flex-col gap-6 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
+      <PageHeader
+        eyebrow="Join today"
+        title="Create your account"
+        description="Save your listening history and get the best of the catalog in one place."
+      />
+      <form className="grid gap-4">
+        <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+          Name
+          <input className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-sky-500 dark:border-slate-700 dark:bg-slate-950" placeholder="Your name" />
+        </label>
+        <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+          Email
+          <input type="email" className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-sky-500 dark:border-slate-700 dark:bg-slate-950" placeholder="you@example.com" />
+        </label>
+        <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+          Password
+          <input type="password" className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-sky-500 dark:border-slate-700 dark:bg-slate-950" placeholder="••••••••" />
+        </label>
+        <button type="submit" className="rounded-full bg-sky-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-sky-700">
+          Create account
+        </button>
+      </form>
+      <p className="text-sm text-slate-600 dark:text-slate-400">
+        Already have an account? <Link href="/login" className="font-semibold text-sky-600">Log in</Link>
+      </p>
+    </div>
+  );
+}
+
+export const metadata = {
+  title: 'Register',
+  description: 'Create a new Castaminofen account.',
+};
 
 export default function RegisterPage() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsSubmitting(true);
-    setError('');
-    setMessage('');
-
-    try {
-      const result = await registerUser({ name, email, password });
-      setMessage(`Account created for ${result.user.email}.`);
-    } catch (submitError) {
-      setError(submitError instanceof Error ? submitError.message : 'Registration failed');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <main
-      style={{
-        minHeight: '100vh',
-        background: '#f8fafc',
-        color: '#0f172a',
-        padding: '32px 20px 80px',
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 460,
-          margin: '0 auto',
-          background: '#fff',
-          borderRadius: 24,
-          padding: 28,
-          boxShadow: '0 10px 30px rgba(15,23,42,0.06)',
-        }}
-      >
-        <h1 style={{ marginTop: 0 }}>Create account</h1>
-        <p style={{ color: '#64748b' }}>Join to save your listening history and bookmarks.</p>
-        <form onSubmit={handleSubmit} style={{ display: 'grid', gap: 12 }}>
-          <input
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            placeholder="Name"
-            required
-            style={{ padding: '12px 14px', borderRadius: 10, border: '1px solid #cbd5e1' }}
-          />
-          <input
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            placeholder="Email"
-            type="email"
-            required
-            style={{ padding: '12px 14px', borderRadius: 10, border: '1px solid #cbd5e1' }}
-          />
-          <input
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            placeholder="Password"
-            type="password"
-            required
-            style={{ padding: '12px 14px', borderRadius: 10, border: '1px solid #cbd5e1' }}
-          />
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            style={{
-              padding: '12px 14px',
-              borderRadius: 10,
-              border: 0,
-              background: '#111827',
-              color: '#fff',
-              cursor: isSubmitting ? 'wait' : 'pointer',
-            }}
-          >
-            {isSubmitting ? 'Creating account…' : 'Create account'}
-          </button>
-        </form>
-        {message ? <p style={{ color: '#0f766e', marginTop: 12 }}>{message}</p> : null}
-        {error ? <p style={{ color: '#b91c1c', marginTop: 12 }}>{error}</p> : null}
-      </div>
-    </main>
+    <AppShell>
+      <Suspense fallback={<div className="rounded-3xl border border-slate-200 bg-white p-6 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">Loading sign-up…</div>}>
+        <RegisterForm />
+      </Suspense>
+    </AppShell>
   );
 }

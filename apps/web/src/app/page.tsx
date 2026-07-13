@@ -1,186 +1,107 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
+
+import { AppShell } from '../components/app-shell';
+import { EmptyState, PageHeader, SectionCard } from '@castaminofen/ui';
 import { getHomeData } from '../lib/mvp-data';
 
-export default function HomePage() {
-  const { featuredPodcasts, latestEpisodes, continueListening, categories, channels } =
-    getHomeData();
+function FeaturedSection() {
+  const { featuredPodcasts, latestEpisodes, continueListening, categories, channels } = getHomeData();
 
   return (
-    <main style={{ minHeight: '100vh', background: '#f8fafc', color: '#0f172a' }}>
-      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '32px 20px 80px' }}>
-        <header
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 24,
-          }}
-        >
-          <div>
-            <p
-              style={{
-                margin: 0,
-                fontSize: 13,
-                textTransform: 'uppercase',
-                letterSpacing: '0.2em',
-                color: '#64748b',
-              }}
-            >
-              Podcast Platform MVP
-            </p>
-            <h1 style={{ margin: '4px 0 0', fontSize: 32 }}>Discover and play great audio</h1>
-          </div>
-          <nav style={{ display: 'flex', gap: 12 }}>
-            <Link
-              href="/podcasts"
-              style={{
-                padding: '10px 14px',
-                border: '1px solid #dbe4f0',
-                borderRadius: 999,
-                background: '#fff',
-              }}
-            >
-              Podcasts
+    <div className="space-y-6">
+      <PageHeader
+        eyebrow="Fresh for today"
+        title="Discover thoughtful audio that fits your day"
+        description="Move from trending shows to hand-picked episodes and keep listening across devices."
+        actions={
+          <>
+            <Link href="/explore" className="rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-700">
+              Explore now
             </Link>
-            <Link
-              href="/episodes"
-              style={{
-                padding: '10px 14px',
-                border: '1px solid #dbe4f0',
-                borderRadius: 999,
-                background: '#fff',
-              }}
-            >
-              Episodes
+            <Link href="/login" className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:text-slate-900 dark:border-slate-700 dark:text-slate-300 dark:hover:text-slate-100">
+              Sign in
             </Link>
-            <Link
-              href="/search"
-              style={{
-                padding: '10px 14px',
-                border: '1px solid #dbe4f0',
-                borderRadius: 999,
-                background: '#fff',
-              }}
-            >
-              Search
-            </Link>
-            <Link
-              href="/login"
-              style={{
-                padding: '10px 14px',
-                borderRadius: 999,
-                background: '#111827',
-                color: '#fff',
-              }}
-            >
-              Login
-            </Link>
-          </nav>
-        </header>
+          </>
+        }
+      />
 
-        <section
-          style={{ display: 'grid', gap: 16, gridTemplateColumns: '1.4fr 0.8fr', marginBottom: 24 }}
-        >
-          <div
-            style={{
-              background: 'linear-gradient(135deg, #111827, #2563eb)',
-              color: '#fff',
-              borderRadius: 24,
-              padding: 28,
-            }}
-          >
-            <p
-              style={{
-                margin: 0,
-                textTransform: 'uppercase',
-                letterSpacing: '0.24em',
-                opacity: 0.8,
-              }}
-            >
-              Featured
-            </p>
-            <h2 style={{ margin: '8px 0 10px', fontSize: 28 }}>{featuredPodcasts[0]?.title}</h2>
-            <p style={{ margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
-              {featuredPodcasts[0]?.description}
-            </p>
-          </div>
-          <div
-            style={{
-              background: '#fff',
-              borderRadius: 24,
-              padding: 24,
-              boxShadow: '0 10px 30px rgba(15,23,42,0.08)',
-            }}
-          >
-            <h3 style={{ marginTop: 0 }}>Continue listening</h3>
-            {continueListening.map((episode) => (
-              <div
-                key={episode.id}
-                style={{ padding: '10px 0', borderBottom: '1px solid #e2e8f0' }}
-              >
-                <strong>{episode.title}</strong>
-                <div style={{ color: '#64748b', fontSize: 14 }}>{episode.duration}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section style={{ marginBottom: 24 }}>
-          <h3>Latest episodes</h3>
-          <div
-            style={{
-              display: 'grid',
-              gap: 16,
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            }}
-          >
-            {latestEpisodes.map((episode) => (
-              <article
-                key={episode.id}
-                style={{
-                  background: '#fff',
-                  borderRadius: 18,
-                  padding: 18,
-                  boxShadow: '0 10px 30px rgba(15,23,42,0.06)',
-                }}
-              >
-                <p style={{ margin: 0, color: '#64748b', fontSize: 13 }}>{episode.podcastSlug}</p>
-                <h4 style={{ margin: '6px 0 8px' }}>{episode.title}</h4>
-                <p style={{ margin: 0, color: '#475569', lineHeight: 1.5 }}>
-                  {episode.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section style={{ display: 'grid', gap: 20, gridTemplateColumns: '1fr 1fr 1fr' }}>
-          <div style={{ background: '#fff', borderRadius: 18, padding: 18 }}>
-            <h3>Categories</h3>
-            {categories.map((category) => (
-              <div key={category} style={{ padding: '6px 0' }}>
-                {category}
-              </div>
-            ))}
-          </div>
-          <div style={{ background: '#fff', borderRadius: 18, padding: 18 }}>
-            <h3>Channels</h3>
-            {channels.map((channel) => (
-              <div key={channel} style={{ padding: '6px 0' }}>
-                {channel}
-              </div>
-            ))}
-          </div>
-          <div style={{ background: '#fff', borderRadius: 18, padding: 18 }}>
-            <h3>Featured podcasts</h3>
+      <div className="grid gap-6 xl:grid-cols-[1.35fr_0.65fr]">
+        <SectionCard title="Featured series" description="A curated selection of top shows this week.">
+          <div className="grid gap-4 md:grid-cols-2">
             {featuredPodcasts.map((podcast) => (
-              <div key={podcast.id} style={{ padding: '6px 0' }}>
-                {podcast.title}
-              </div>
+              <Link key={podcast.id} href={`/podcast/${podcast.slug}`} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:-translate-y-0.5 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-950/70">
+                <div className="mb-3 h-24 rounded-2xl bg-gradient-to-br from-sky-500 to-indigo-600" />
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{podcast.title}</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{podcast.description}</p>
+              </Link>
             ))}
           </div>
-        </section>
+        </SectionCard>
+
+        <SectionCard title="Continue listening" description="Pick up where you left off.">
+          {continueListening.length ? (
+            <div className="space-y-3">
+              {continueListening.map((episode) => (
+                <div key={episode.id} className="rounded-2xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/70">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{episode.title}</p>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{episode.duration} • {episode.podcastSlug}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <EmptyState title="Nothing in progress" description="Resume an episode and it will appear here." />
+          )}
+        </SectionCard>
       </div>
-    </main>
+
+      <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <SectionCard title="Latest episodes" description="Fresh stories and conversations released recently.">
+          <div className="space-y-4">
+            {latestEpisodes.map((episode) => (
+              <Link key={episode.id} href={`/episode/${episode.slug}`} className="flex flex-col gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-slate-300 dark:border-slate-800 dark:bg-slate-950/70">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{episode.title}</p>
+                  <span className="rounded-full bg-slate-200 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300">{episode.duration}</span>
+                </div>
+                <p className="text-sm leading-6 text-slate-600 dark:text-slate-400">{episode.description}</p>
+              </Link>
+            ))}
+          </div>
+        </SectionCard>
+
+        <div className="grid gap-6">
+          <SectionCard title="Categories" description="Find new spaces to explore.">
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <span key={category} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-300">{category}</span>
+              ))}
+            </div>
+          </SectionCard>
+          <SectionCard title="Channels" description="Follow the publishers shaping the feed.">
+            <div className="space-y-2">
+              {channels.map((channel) => (
+                <div key={channel} className="rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-300">{channel}</div>
+              ))}
+            </div>
+          </SectionCard>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export const metadata = {
+  title: 'Castaminofen | Discover podcasts',
+  description: 'A polished, mobile-first podcast experience with search, subscriptions, and playback.',
+};
+
+export default function HomePage() {
+  return (
+    <AppShell>
+      <Suspense fallback={<div className="rounded-3xl border border-slate-200 bg-white p-6 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">Loading home experience…</div>}>
+        <FeaturedSection />
+      </Suspense>
+    </AppShell>
   );
 }

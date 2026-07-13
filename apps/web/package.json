@@ -4,19 +4,23 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "dev": "tsx src/index.ts",
-    "start": "node dist/index.js",
-    "lint": "eslint . --ext .ts",
+    "build": "next build",
+    "dev": "next dev --turbopack",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx",
     "test": "echo \"No tests yet\""
   },
   "dependencies": {
     "@castaminofen/core": "workspace:*",
     "@castaminofen/config": "workspace:*",
     "@castaminofen/logger": "workspace:*",
+    "@castaminofen/ui": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.11",
     "next": "^15.3.3",
+    "postcss": "^8.4.49",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "typescript": "^5.6.3",

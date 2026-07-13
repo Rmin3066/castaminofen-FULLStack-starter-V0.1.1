@@ -1,6 +1,7 @@
 import { PackageConfig, PackageContract } from './types';
 
 export * from './types';
+export * from './components';
 
 export class UiService implements PackageContract {
   constructor(public readonly config: PackageConfig) {}
