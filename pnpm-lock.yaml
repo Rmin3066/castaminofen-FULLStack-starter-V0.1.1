@@ -16,8 +16,8 @@ importers:
         specifier: ^9.14.0
         version: 9.39.5
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -59,8 +59,8 @@ importers:
         version: link:../../packages/logger
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -135,8 +135,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.10
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -160,8 +160,8 @@ importers:
         version: link:../../packages/logger
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -185,8 +185,8 @@ importers:
         version: link:../../packages/logger
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -210,8 +210,8 @@ importers:
         version: link:../../packages/logger
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -256,8 +256,8 @@ importers:
         version: 4.3.2
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       '@types/react':
         specifier: ^19.2.0
         version: 19.2.17
@@ -287,8 +287,8 @@ importers:
         version: link:../../packages/logger
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -306,8 +306,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -325,8 +325,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -344,8 +344,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -360,8 +360,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -376,8 +376,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -398,8 +398,8 @@ importers:
         version: 5.22.0(prisma@5.22.0)
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -414,8 +414,8 @@ importers:
         version: link:../ui
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -433,8 +433,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -449,8 +449,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -468,8 +468,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -484,8 +484,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -500,8 +500,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -519,8 +519,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -538,8 +538,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -557,8 +557,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -576,8 +576,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -595,8 +595,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -614,8 +614,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -633,8 +633,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -652,8 +652,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -671,8 +671,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -690,8 +690,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -702,8 +702,8 @@ importers:
   packages/types:
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -718,8 +718,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -734,8 +734,8 @@ importers:
         version: link:../types
     devDependencies:
       '@types/node':
-        specifier: ^22.10.1
-        version: 22.20.1
+        specifier: ^26.1.1
+        version: 26.1.1
       eslint:
         specifier: ^9.14.0
         version: 9.39.5(jiti@2.7.0)
@@ -1495,8 +1495,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.20.1':
-    resolution: {integrity: sha512-EANqOCF9QFyra+4pfxUcX9STKJpCLjMbObVzljIJomAWSnuSIEAvyzEU53GaajbXJEgdh0iEcPL+DGvpUd4k1Q==}
+  '@types/node@26.1.1':
+    resolution: {integrity: sha512-nxAkRSVkN1Y0JC1W8ky/fTfkGsMmcrRsbx+3XoZE+rMOX71kLYTV7fLXpqud1GpbpP5TuffXFqfX7fH2GgZREw==}
 
   '@types/qs@6.15.1':
     resolution: {integrity: sha512-GZHUBZR9hckSUhrxmp1nG6NwdpM9fCunJwyThLW1X3AyHgd9IlHb6VANpQQqDr2o/qQp6McZ3y/IA2rVzKzSbw==}
@@ -2684,8 +2684,8 @@ packages:
     resolution: {integrity: sha512-rvKSBiC5zqCCiDZ9kAOszZcDvdAHwwIKJG33Ykj43OKcWsnmcBRL09YTU4nOeHZ8Y2a7l1MgTd08SBe9A8Qj6A==}
     engines: {node: '>=18'}
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+  undici-types@8.3.0:
+    resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
 
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
@@ -3281,22 +3281,22 @@ snapshots:
 
   '@types/bcrypt@5.0.2':
     dependencies:
-      '@types/node': 22.20.1
+      '@types/node': 26.1.1
 
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 22.20.1
+      '@types/node': 26.1.1
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 22.20.1
+      '@types/node': 26.1.1
 
   '@types/estree@1.0.9': {}
 
   '@types/express-serve-static-core@5.1.2':
     dependencies:
-      '@types/node': 22.20.1
+      '@types/node': 26.1.1
       '@types/qs': 6.15.1
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -3314,13 +3314,13 @@ snapshots:
   '@types/jsonwebtoken@9.0.10':
     dependencies:
       '@types/ms': 2.1.0
-      '@types/node': 22.20.1
+      '@types/node': 26.1.1
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.20.1':
+  '@types/node@26.1.1':
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 8.3.0
 
   '@types/qs@6.15.1': {}
 
@@ -3336,12 +3336,12 @@ snapshots:
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 22.20.1
+      '@types/node': 26.1.1
 
   '@types/serve-static@2.2.0':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 22.20.1
+      '@types/node': 26.1.1
 
   '@types/validator@13.15.10': {}
 
@@ -4573,7 +4573,7 @@ snapshots:
 
   uint8array-extras@1.5.0: {}
 
-  undici-types@6.21.0: {}
+  undici-types@8.3.0: {}
 
   unpipe@1.0.0: {}
 
