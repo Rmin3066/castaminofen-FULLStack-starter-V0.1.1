@@ -13,9 +13,12 @@ model User {
   name            String?
   username        String?             @unique
   passwordHash    String?
+  refreshTokenHash String?
+  role            String              @default("user")
   avatarUrl       String?
   bio             String?
   emailVerifiedAt DateTime?
+  lastLoginAt     DateTime?
   createdAt       DateTime            @default(now())
   updatedAt       DateTime            @updatedAt
 
@@ -157,4 +160,16 @@ model ListeningHistory {
   episode  Episode  @relation(fields: [episodeId], references: [id])
 
   @@map("listening_history")
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("notifications")
 }

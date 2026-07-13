@@ -1,5 +1,8 @@
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
 export class UploadsService {
   upload() {
-    return { message: 'Uploads placeholder' };
+    return { message: 'Upload placeholder', accepted: true };
   }
 }

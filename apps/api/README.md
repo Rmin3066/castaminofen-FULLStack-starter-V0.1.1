@@ -1,11 +1,46 @@
-# api
+# app-api
 
-This app provides the api surface for the platform and is intentionally scaffolded with placeholders for future feature work.
+این سرویس به‌صورت NestJS REST API برای پادکست، کاربر، پروفایل، کانال، اپیزود، دسته‌بندی، تگ، پلی‌لیست، بوکمارک، تاریخچه، جستجو، اعلان، آپلود و پنل ادمین پیاده‌سازی شده است.
 
-## Responsibilities
-- host the runtime entrypoint for the api experience
-- consume shared workspace packages
-- expose a minimal, production-ready structure for local development
+## ویژگی‌های اصلی
+- NestJS
+- Prisma + PostgreSQL
+- JWT Authentication
+- Refresh Tokens
+- RBAC
+- Validation
+- Swagger / OpenAPI
+- Logging
+- Exception Filters
+- Interceptors
+- Guards
+- Rate Limiting
+- Health Checks
 
-## TODO
-- add real routes, services, or UI modules as needed
+## مسیرهای اصلی
+- Auth: /api/auth/register, /api/auth/login, /api/auth/refresh
+- Users: /api/users
+- Profiles: /api/profiles/:userId
+- Channels: /api/channels
+- Podcasts: /api/podcasts
+- Episodes: /api/episodes
+- Categories: /api/categories
+- Tags: /api/tags
+- Playlists: /api/playlists
+- Bookmarks: /api/bookmarks
+- History: /api/history
+- Search: /api/search
+- Notifications: /api/notifications
+- Uploads: /api/uploads
+- Admin: /api/admin/dashboard
+- Health: /api/health
+- Swagger: /docs
+
+## راه‌اندازی
+1. Prisma schema را با PostgreSQL هماهنگ کنید.
+2. متغیرهای محیطی را تنظیم کنید: DATABASE_URL, JWT_SECRET, JWT_REFRESH_SECRET.
+3. دستورهای زیر را اجرا کنید:
+   - pnpm install
+   - pnpm --filter @castaminofen/app-api build
+   - pnpm --filter @castaminofen/app-api test
+   - pnpm --filter @castaminofen/app-api dev

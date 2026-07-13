@@ -1,6 +1,11 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query, UseGuards } from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { PodcastsService } from './podcasts.service';
 
+@ApiTags('Podcasts')
+@ApiBearerAuth()
+@UseGuards(JwtAuthGuard)
 @Controller('podcasts')
 export class PodcastsController {
   constructor(private readonly podcastsService: PodcastsService) {}
@@ -22,7 +27,6 @@ export class PodcastsController {
 
   @Get(':slug/episodes')
   getEpisodes(@Param('slug') slug: string) {
-    const podcast = this.podcastsService.findBySlug(slug);
-    return podcast?.episodes ?? [];
+    return this.podcastsService.findEpisodesByPodcastSlug(slug);
   }
 }

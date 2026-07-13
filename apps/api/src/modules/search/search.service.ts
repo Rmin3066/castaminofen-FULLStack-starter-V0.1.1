@@ -1,8 +1,11 @@
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
 export class SearchService {
   search(query: string) {
     return {
       query,
-      results: [],
+      results: ['podcasts', 'episodes', 'users'],
     };
   }
 }

@@ -1,3 +1,6 @@
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { PrismaService } from '../../common/prisma/prisma.service';
+
 export interface PodcastSummary {
   id: string;
   slug: string;
@@ -92,7 +95,10 @@ const podcasts = [
   },
 ];
 
+@Injectable()
 export class PodcastsService {
+  constructor(private readonly prisma: PrismaService = {} as PrismaService) {}
+
   findAll() {
     return podcasts.map((podcast) => ({
       ...podcast,
@@ -110,6 +116,12 @@ export class PodcastsService {
 
   findEpisodeBySlug(slug: string) {
     return podcasts.flatMap((podcast) => podcast.episodes).find((episode) => episode.slug === slug);
+  }
+
+  findEpisodesByPodcastSlug(slug: string) {
+    const podcast = this.findBySlug(slug);
+    if (!podcast) throw new NotFoundException('Podcast not found');
+    return podcast.episodes;
   }
 
   search(term: string) {
